@@ -1,5 +1,7 @@
 # Semantic Kernel Playground - Shadcn Frontend
 
+[日本語版はこちら](README.ja.md)
+
 This is a modern frontend for the Semantic Kernel Playground, built with Next.js and shadcn/ui components.
 
 ## Features

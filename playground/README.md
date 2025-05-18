@@ -1,5 +1,7 @@
 # Semantic Kernel Interactive Demo
 
+[日本語版はこちら](README.ja.md)
+
 An interactive web application showcasing Microsoft's Semantic Kernel capabilities including semantic memory, AI-powered functions, translation, and text summarization.
 
 ## Quick Start

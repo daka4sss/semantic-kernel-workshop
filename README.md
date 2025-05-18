@@ -1,5 +1,7 @@
 # Semantic Kernel Workshop
 
+[日本語版はこちら](README.ja.md)
+
 A hands-on workshop exploring Microsoft's Semantic Kernel framework for building intelligent AI applications. This workshop provides practical experience with real-world AI application patterns using Python and Azure OpenAI.
 
 ## Workshop Overview
