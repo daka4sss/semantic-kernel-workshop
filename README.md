@@ -52,18 +52,29 @@ uv sync --prerelease=allow
 
 ## Workshop Modules
 
+### 00. Setup
+
+Copy `.env.example` to `.env` and update it, so it points to your Azure OpenAI and Azure Search instance.
+
+Example:
+```
+AZURE_OPENAI_ENDPOINT=https://xxxxxx.openai.azure.com/
+AZURE_OPENAI_CHAT_DEPLOYMENT_NAME=gpt-4o
+AZURE_OPENAI_EMBEDDING_DEPLOYMENT_NAME=text-embedding-ada-002
+AZURE_OPENAI_API_KEY=xxxxxxxxxxx
+AZURE_OPENAI_API_VERSION=2025-03-01-preview
+```
+
 ### 01. Introduction to Semantic Kernel
 
 Learn the fundamentals of Semantic Kernel:
 - Core architectural components (Kernel, AI Services, Plugins)
 - Building semantic functions with prompts
 - Creating native functions with Python code
-- Implementing memory for persistent context
 - Enabling automatic function calling for AI agents
 
 **Key Notebooks:**
 - `01-intro.ipynb`: Core concepts, services, and function creation
-- `02-memory.ipynb`: Implementing semantic memory with embeddings
 
 ### 02. Semantic Kernel Agents
 
@@ -78,7 +89,16 @@ Master the creation and orchestration of AI agents:
 - `02.1-agents.ipynb`: Creating and configuring agents
 - `02.2-agents-chats.ipynb`: Inter-agent communication and complex patterns
 
-### 03. Process Framework
+### 03. Semantic Kernel with MCP
+
+Learn to how to connect an SK Agent to MCP:
+- Running your MCP server
+- Using an Agent in Semantic Kernel to make calls to it
+
+**Key Notebooks:**
+- `03.1-sk-with-mcp.ipynb`: Semantic Kernel with MCP example
+
+### 04. Process Framework
 
 Learn to build structured, event-driven AI workflows:
 - Understanding the Process Framework architecture
@@ -88,26 +108,27 @@ Learn to build structured, event-driven AI workflows:
 - Creating maintainable and testable AI workflows
 
 **Key Notebooks:**
-- `03.1-intro-to-processes.ipynb`: Building stateful, event-driven AI processes
+- `04.1-intro-to-processes.ipynb`: Building stateful, event-driven AI processes
 
 ## Project Structure
 
 ```
 semantic-kernel-workshop/
 ├── 01-intro-to-semantic-kernel/    # Introduction to core concepts
-│   ├── 01-intro.ipynb              # Basic concepts and functions
-│   └── 02-memory.ipynb             # Memory implementation
+│   └── 01-intro.ipynb              # Basic concepts and functions
 ├── 02-semantic-kernel-agents/      # Agent creation and orchestration
-│   ├── 02.1-agents.ipynb           # Agent fundamentals
+│   ├── 02.1-single-agents.ipynb    # Agent fundamentals
 │   ├── 02.2-agents-chats.ipynb     # Multi-agent communication
-│   └── .env.sample                 # Environment variables template
-├── 03-process-framework/           # Structured AI workflows
-│   └── 03.1-intro-to-processes.ipynb  # Process fundamentals
-└── playground/                     # Interactive application
-    ├── backend/                    # FastAPI server
-    ├── frontend/                   # React application
-    ├── start.sh                    # Launch script
-    └── README.md                   # Playground documentation
+├── 03-semantic-kernel-mcp/         # Using SK with MCP
+│   └── 03.1-sk-with-mcp.ipynb      # SK + MCP example
+├── 04-process-framework/           # Structured AI workflows
+│   └── 04.1-intro-to-processes.ipynb  # Process fundamentals
+├── playground/                     # Interactive application
+│   ├── backend/                    # FastAPI server
+│   ├── frontend/                   # React application
+│   ├── start.sh                    # Launch script
+│   └── README.md                   # Playground documentation
+└── .env.example                 # Environment variables template
 ```
 
 ## Getting Started
@@ -141,11 +162,11 @@ semantic-kernel-workshop/
 
 4. Add your Azure OpenAI credentials to the `.env` file:
    ```
-   AZURE_OPENAI_DEPLOYMENT=your-deployment-name
-   AZURE_OPENAI_API_KEY=your-api-key 
-   AZURE_OPENAI_ENDPOINT=your-azure-endpoint
-   AZURE_OPENAI_API_VERSION=2024-02-15-preview
-   AZURE_OPENAI_EMBEDDING_DEPLOYMENT=your-embedding-deployment
+   AZURE_OPENAI_ENDPOINT=https://xxxxxx.openai.azure.com/
+   AZURE_OPENAI_CHAT_DEPLOYMENT_NAME=gpt-4o
+   AZURE_OPENAI_EMBEDDING_DEPLOYMENT_NAME=text-embedding-ada-002
+   AZURE_OPENAI_API_KEY=xxxxxxxxxxx
+   AZURE_OPENAI_API_VERSION=2025-03-01-preview
    ```
 
 5. Start with the first notebook:
